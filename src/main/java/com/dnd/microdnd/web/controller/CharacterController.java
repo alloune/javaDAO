@@ -34,7 +34,7 @@ public class CharacterController {
         return characterDao.delete(id);
     }
     @PutMapping(value = "/character/{id}")
-    public Character updateCharacter(@PathVariable int id, Character character){
+    public Character updateCharacter(@PathVariable int id, @RequestBody Character character){
         Character characterUpdated = characterDao.update(id, character);
 
         return characterUpdated;
