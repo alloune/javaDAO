@@ -12,6 +12,10 @@ public class Character {
     //constructeur
     public Character() {
     }
+    public Character(String name, String type){
+        this.name = name;
+        this.type = type;
+    }
     public Character(int id, String name, String type, int hp) {
         this.id = id;
         this.name = name;

@@ -3,6 +3,7 @@ package com.dnd.microdnd.web.dao;
 import java.util.ArrayList;
 import com.dnd.microdnd.model.Character;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class CharacterDaoImpl implements CharacterDao {
         charList.add(new Character(2, "Martin", "Assassin", 2));
 
     }
-
+    // Vu qu'on implémente le DAO, on écrit les methodes
     @Override
     public List<Character> findAll(){
         return charList;
@@ -35,13 +36,20 @@ public class CharacterDaoImpl implements CharacterDao {
         return character;
     }
     @Override
-    public Character update(Character character){
+    public Character update(int id,@RequestBody Character character){
 
-        return character;
+        Character charToUpdate = charList.stream().filter(elt -> elt.getId() ==  id).findFirst().orElse(null);
+
+        charToUpdate.setName(character.getName());
+        charToUpdate.setType(character.getType());
+
+        return charToUpdate;
     }
     @Override
-    public Character delete(Character character){
-        charList.remove(character);
-        return character;
+    public Character delete(int id){
+        Character charToDelete = charList.stream().filter(elt -> elt.getId() ==  id).findFirst().orElse(null);
+        charList.remove(charToDelete);
+        return charToDelete;
+
     }
 }
