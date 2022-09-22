@@ -1,22 +1,30 @@
 package com.dnd.microdnd.model;
 
-public class Character {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Hero {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     //attributs de la classe
     private int id;
     private String name;
-    private String type;
     private int hp;
+    private String type;
 
 
     //constructeur
-    public Character() {
+    public Hero() {
     }
-    public Character(String name, String type){
+    public Hero(String name, String type){
         this.name = name;
         this.type = type;
     }
-    public Character(int id, String name, String type, int hp) {
+    public Hero(int id, String name, String type, int hp) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -64,6 +72,7 @@ public class Character {
                 ", classe=" + type +
                 '}';
     }
+
 }
 
 
