@@ -1,3 +1,0 @@
--- INSERT INTO characters VALUES ( 'Allan', 12, 'Gardien');
--- INSERT INTO characters VALUES ( 'Bahjat', 22, 'Paladin');
--- INSERT INTO characters VALUES ( 'Jean', 8, 'Samuraï');
