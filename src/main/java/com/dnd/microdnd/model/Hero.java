@@ -1,9 +1,6 @@
 package com.dnd.microdnd.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "hero")
 public class Hero {
@@ -13,7 +10,8 @@ public class Hero {
 
     //attributs de la classe
     private int id;
-    private String name;
+
+    private String name ;
     private int hp;
     private String type;
 
